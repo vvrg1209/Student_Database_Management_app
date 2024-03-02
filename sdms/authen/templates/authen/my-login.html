@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+       {% load static %}
+    <link rel="stylesheet" href="{% static 'mylogin.css' %}">
+</head>
+<body>
+<h1>Welcome to Student Management Database System</h1> <br>
+<h3><button><a href='http://127.0.0.1:8000/'>Home</a></button></h3> <br>
+
+ <div>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+</div>
+<fieldset>
+    <legend><h2>TEACHER'S LOGIN</h2></legend>
+<form action="my_login" method="POST">
+    {% csrf_token %}
+    <h4>Enter Username:<input type="text" name="username"> </h4>
+    <h4>Enter Password:<input type="password" name="password"></h4> <br> <br>
+    <button type="submit">Login</button>
+
+</form>
+    </fieldset>
+<h3><button><a href="register">Register</a></button></h3>
+</body>
+</html>

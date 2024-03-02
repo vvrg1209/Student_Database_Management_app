@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks Sheet</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'view.css' %}">
+</head>
+<div align="right">
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+<body>
+<h2><u>STUDENT DETAILS</u></h2>
+<hr>
+<pre> <h2>NAME                           : <span style="text-transform:uppercase">{{datas.name}}</span></h2></pre>
+<pre> <h2>ROLL NUMBER                    : {{datas.rollnumber}}</h2></pre>
+<hr>
+<h2><u>MARK SHEET</u></h2>
+<pre> <h2>KANNADA        : {{datas.kannada}}</h2></pre>
+<pre> <h2>ENGLISH        : {{datas.english}}</h2></pre>
+<pre> <h2>MATHS          : {{datas.maths}}</h2></pre>
+<pre> <h2>SCIENCE        : {{datas.science}}</h2></pre>
+<pre> <h2>SOCIAL STUDIES : {{datas.social}}</h2></pre>
+<pre> <h2><mark>TOTAL          : {{datas.total}}</h2></pre>
+<pre> <H2><mark id="ac">**</mark></H2></pre>
+
+<script>
+    a=parseInt({{datas.kannada}})
+    b=parseInt({{datas.english}})
+    c=parseInt({{datas.maths}})
+    d=parseInt({{datas.science}})
+    e=parseInt({{datas.social}})
+    if(a>35 && b>35 && c>35 && d>35 && e>35){
+    document.getElementById("ac").innerText="RESULT:  PASS"}
+    else {
+    document.getElementById("ac").innerText="RESULT:  FAIL"}
+</script>
+
+
+</body>
+</html>

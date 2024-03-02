@@ -1,0 +1,48 @@
+body{
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+  }
+
+h1{
+    font-size: 30px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+table{
+  width: 60%;
+  font-size:22px;
+  border=9px;
+  cellspacing=9px;
+  cellpadding=9px;
+   bordercolor=purple
+   align=center
+}
+
+td{
+  text-align: center;
+}
+
+button{
+    background-color: #0693cd;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      font-size:16px;
+      font-weight: bold;
+      line-height: 1.4;
+      padding: 8px;
+      width: 100px
+  }
+ a{
+    color:black;
+  }
+
+.c {
+  text-transform: capitalize;
+}

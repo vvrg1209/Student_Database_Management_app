@@ -1,0 +1,45 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  /* use the following only if you are able to scroll past the image to see a white area (this is the <body> peeking out) above or below the image */
+  overflow: hidden;
+}
+
+body{
+background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg");
+height: 100%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+overflow: hidden;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3em;
+  font-family: "Arial", sans-serif;
+}
+
+h3 {
+    position:relative;
+    color: white;
+    font-family: sans-serif;
+    display: block
+        width: 100%;
+}
+button{
+    background-color: white;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      font-size:16px;
+      font-weight: bold;
+      line-height: 1.4;
+      padding: 8px;
+      width: 200px
+  }
+
+  #0693cd;
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+       {% load static %}
+    <link rel="stylesheet" href="{% static 'update.css' %}">
+</head>
+<body>
+<fieldset>
+    <legend><h2>UPDATE STUDENT DETAILS</h2></legend>
+<form action="/updateData/{{data.rollnumber}}" method="POST">
+    {% csrf_token %}
+    <h4>STUDENT NAME: <input type="text" name="name" value="{{data.name}}"> </h4>
+    <h4>ROLL NUMBER: <input type="number" name="rollnumber" value="{{data.rollnumber}}"> </h4>
+     <h4>E-MAIL ID: <input type="email" name="email" value="{{data.email}}"></h4>
+    <h4>TOTAL DAYS STUDENT ATTENDED CLASS: <input type="number" value="{{data.atten}}" name="atten"></h4>
+     <h4>KANNADA: <input type="number" name="kannada" placeholder="Max Marks 100" value="{{data.kannada}}"></h4>
+    <h4>ENGLISH: <input type="number" name="english" placeholder="Max Marks 100" value="{{data.english}}"></h4>
+        <h4>MATHEMATICS: <input type="number" name="maths" placeholder="Max Marks 100" value="{{data.maths}}"></h4>
+        <h4>SCIENCE: <input type="number" name="science" placeholder="Max Marks 100" value="{{data.science}}"></h4>
+        <h4>SOCIAL STUDIES: <input type="number" name="social" placeholder="Max Marks 100" value="{{data.social}}"></h4>
+    <button type="submit">UPDATE</button>
+</form>
+</fieldset>
+</body>
+</html>

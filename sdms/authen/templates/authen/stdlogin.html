@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'stdlogin.css' %}">
+</head>
+<body>
+<h1>Welcome to Student Management Database System</h1> <br>
+<H2 style="text-transform:uppercase">HELLO {{datas.name}}</H2>
+ <div>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+</div>
+<fieldset>
+    <legend><h2>STUDENT LOGIN</h2></legend>
+<form action="" method="POST">
+    {% csrf_token %}
+    <h3>Enter Password:<input type="text" name="email"> <br> <br></h3>
+    <h4>Note: your email-id is your password</h4>
+    <button type="submit">Login</button>
+</form>
+    </fieldset>
+<br>
+</body>
+</html>

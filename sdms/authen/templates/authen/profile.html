@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% if user.is_authenticated %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+</head>
+<body>
+<div align="right">
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+<h2>STUDENT DATABASE MANAGEMENT SYSTEM</h2>
+<form action="addData" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h2>STUDENT DETAILS</h2></legend>
+    <h4>STUDENT NAME  : <input type="text" name="name"></h4>
+    <h4>ROLL NUMBER       : <input type="number" name="rollnumber"></h4>
+    <h4>E-MAIL: <input type="email" name="email"></h4>
+    <h4>TOTAL DAYS STUDENT ATTENDED CLASS: <input type="number" placeholder="Out of 200 Days" name="atten"></h4>
+         </fieldset>
+    <fieldset>
+        <legend><h2>MARKS SHEET</h2></legend>
+        <h4>KANNADA: <input type="number" name="kannada" placeholder="Max Marks 100"></h4>
+        <h4>ENGLISH: <input type="number" name="english" placeholder="Max Marks 100"></h4>
+        <h4>MATHETAICS: <input type="number" name="maths" placeholder="Max Marks 100"></h4>
+        <h4>SCIENCE: <input type="number" name="science" placeholder="Max Marks 100"></h4>
+        <h4>SOCIAL STUDIES: <input type="number" name="social" placeholder="Max Marks 100"></h4>
+    </fieldset>
+    <br>
+
+    <button type="submit">SUBMIT</button>
+    <br>
+</form>
+        <br>
+
+<br>
+<br>
+{% if datas %}
+<div>
+    <table align="center" border="2" border=9px cellspacing='9' cellpadding='9' bordercolor='purple'>
+        <tr>
+            <th>NAME</th>
+            <th>ROLL NUMBER</th>
+            <th>E-MAIL</th>
+            <th>ATTENDENCE</th>
+            <th>KANNADA</th>
+            <th>ENGLISH</th>
+            <th>MATHEMATICS</th>
+            <th>SCIENCE</th>
+            <th>SOCIAL STUDIES</th>
+            <th>TOTAL</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        {% for data in datas %}
+
+
+        <tr>
+            <td style="text-transform: uppercase">{{data.name}}</td>
+            <td>{{data.rollnumber}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.atten}}</td>
+            <td>{{data.kannada}}</td>
+            <td>{{data.english}}</td>
+            <td>{{data.maths}}</td>
+            <td>{{data.science}}</td>
+            <td>{{data.social}}</td>
+            <td>{{data.total}}</td>
+            <td><button><a href="updateData/{{data.rollnumber}}">UPDATE</a></button></td>
+            <td><button><a href="deleteData/{{data.rollnumber}}">DELETE</a></button></td>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+    {% endif %}
+</div>
+
+
+
+</body>
+{% endif %}
+</html>

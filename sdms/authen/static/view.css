@@ -1,0 +1,17 @@
+button{
+    background-color: #0693cd;
+      border: 0;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #fff;
+      font-size:16px;
+      font-weight: bold;
+      line-height: 1.4;
+      padding: 8px;
+      width: 100px
+  }
+body{
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+  }
